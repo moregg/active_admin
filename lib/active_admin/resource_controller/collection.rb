@@ -46,8 +46,10 @@ module ActiveAdmin
             column = $1
             order  = $2
             table  = active_admin_config.resource_table_name
-            table_column = (column =~ /\./) ? column :
-              "#{table}.#{active_admin_config.resource_quoted_column_name(column)}"
+            # table_column = (column =~ /\./) ? column :
+            #   "#{table}.#{active_admin_config.resource_quoted_column_name(column)}"
+
+            table_column = column
 
             chain.reorder("#{table_column} #{order}")
           else
