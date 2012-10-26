@@ -16,8 +16,8 @@ module ActiveAdmin
 
       def input_name
         s = super
-        if s =~ /^[\w]+[a-z]__\w+$/
-          s
+        if s =~ /^([\w]+[a-z])__(\w+)$/
+          "#{$1}_#{$2}"
         else
           "#{s}_contains"
         end
