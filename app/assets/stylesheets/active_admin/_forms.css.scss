@@ -262,7 +262,8 @@ form.filter_form {
       }
     }
 
-    &.filter_date_range {
+    &.filter_date_range,
+    &.filter_numeric_range {
       .seperator {
         display: inline-block;
         text-align: center;
@@ -270,9 +271,14 @@ form.filter_form {
       }
     
       input[type=text] {
-        background: #fff url(active_admin_image_path('datepicker/datepicker-input-icon.png')) no-repeat 100% 7px;
         padding-right: $date-range-filter-input-right-padding;
         width: $date-range-filter-input-width;
+      }
+
+      &.filter_date_range {
+        input[type=text] {
+          background: #fff url(active_admin_image_path('datepicker/datepicker-input-icon.png')) no-repeat 100% 7px;
+        }
       }
     }
   }

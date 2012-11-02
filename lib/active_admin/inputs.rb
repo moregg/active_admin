@@ -11,5 +11,6 @@ module ActiveAdmin
     autoload :FilterSelectInput
     autoload :FilterCheckBoxesInput
     autoload :FilterBooleanInput
+    autoload :FilterNumericRangeInput
   end
 end
