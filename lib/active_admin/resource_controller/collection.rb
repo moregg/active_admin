@@ -77,6 +77,16 @@ module ActiveAdmin
           search_params.delete_if do |key, value|
             value == ""
           end
+
+          search_params = search_params.map do |e|
+            key,value = e.flatten
+            value = value[1..-1] if value[0] == '['
+            value = value[0..-2] if value[-1] == ']'
+            value = value.split(',') if key.end_with?('_in')
+            [key, value]
+          end
+          search_params = Hash[search_params]
+
           search_params
         end
       end
